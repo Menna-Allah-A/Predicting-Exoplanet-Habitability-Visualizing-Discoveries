@@ -1,6 +1,7 @@
+#%%
 import pandas as pd # -> Store the data you will get from AI response in a Structred DataFrame
 
-
+#%%
 try :
     df = pd.read_csv('PSCompPars.csv')
     print(df.head())
@@ -10,6 +11,7 @@ except Exception as e:
     print("UnExpected error occured: ",e)        
 
 
+#%%
 keyColumns = [ # Identification
              'pl_name', 'hostname' ,
                 #  Planet characteristics
@@ -21,14 +23,18 @@ keyColumns = [ # Identification
               'sy_snum', 'sy_pnum', 'sy_dist',
               # Discovery information
               'discoverymethod', 'disc_year', 'disc_facility']
-
 df = df[keyColumns]
 
+#%%
+df.head()
 
+#%%
+df.shape
 
+#%%
+df.describe
 
-
-
+#%%
 
 
 
@@ -41,3 +47,4 @@ df = df[keyColumns]
     #df.to_csv('nasa_exoplanets.csv' , index= False) # -> index = false for removing index column 
 #import requests  # ->allows Python to send HTTP requests (like GET/POST) to APIs or websites
                  # -> to Fetch the data 
+# %%
